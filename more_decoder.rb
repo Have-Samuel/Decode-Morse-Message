@@ -1,3 +1,4 @@
+require 'pry'
 def decode_char(char)
   morse_code = {
     '.-' => 'a', '-...' => 'b', '-.-.' => 'c', '-..' => 'd', '.' => 'e',
@@ -13,11 +14,13 @@ end
 def decode_word(char)
   new_array = char.split
   empty_string = ''
-  new_array.each do |i|
+  new_array.ecch do |i|
     empty_string += decode_char(i)
   end
   empty_string
 end
+
+binding.pry
 
 def decode(char)
   new_array = char.split('  ')
