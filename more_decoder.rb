@@ -1,4 +1,5 @@
 require 'pry'
+# Create a method to decode a Morse code character, takes a string parameter, and return the corresponding character in uppercase (e.g. decode_char(".-") returns "A").
 def decode_char(char)
   morse_code = {
     '.-' => 'a', '-...' => 'b', '-.-.' => 'c', '-..' => 'd', '.' => 'e',
@@ -8,6 +9,8 @@ def decode_char(char)
     '..-' => 'u', '...-' => 'v', '.--' => 'w', '-..-' => 'x', '-.--' => 'y',
     '--..' => 'z'
   }
+  # morse_code[char] will return the value of the key char, eg
+  # morse_code['.-'] will return 'a' and upcase will make it 'A'
   morse_code[char].upcase
 end
 
