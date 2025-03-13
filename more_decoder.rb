@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 # Create a method to decode a Morse code character, takes a string parameter, and return the corresponding character in uppercase (e.g. decode_char(".-") returns "A").
 def decode_char(char)
   morse_code = {
@@ -14,27 +14,28 @@ def decode_char(char)
   morse_code[char].upcase
 end
 
+# 
 def decode_word(char)
   new_array = char.split
   empty_string = ''
-  new_array.ecch do |i|
+  new_array.each do |i|
     empty_string += decode_char(i)
   end
   empty_string
 end
 
-binding.pry
+# binding.pry
 
-def decode(char)
-  new_array = char.split('  ')
-  new_string = ''
-  new_array.each do |i|
-    new_string << "#{decode_word(i)} "
-  end
-  new_string
-end
+# def decode(char)
+#   new_array = char.split('  ')
+#   new_string = ''
+#   new_array.each do |i|
+#     new_string << "#{decode_word(i)} "
+#   end
+#   new_string
+# end
 
-# print decode_char(".-")
-# print decode_word('-- -.--')
-# print decode('-- -.--  -. .- -- .')
-print decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+p decode_char(".-")
+p decode_word('-- -.--')
+p decode('-- -.--  -. .- -- .')
+p decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
