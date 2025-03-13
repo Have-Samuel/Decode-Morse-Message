@@ -13,7 +13,6 @@ def decode_char(char)
   # morse_code['.-'] will return 'a' and upcase will make it 'A'
   morse_code[char].upcase
 end
-
 # 
 def decode_word(char)
   new_array = char.split
@@ -24,18 +23,20 @@ def decode_word(char)
   empty_string
 end
 
-# binding.pry
-
-# def decode(char)
-#   new_array = char.split('  ')
-#   new_string = ''
-#   new_array.each do |i|
-#     new_string << "#{decode_word(i)} "
-#   end
-#   new_string
-# end
-
 p decode_char(".-")
 p decode_word('-- -.--')
+p decode_word('-.- .- -... .- .-. . . -... .')
+
+# binding.pry
+
+def decode(char)
+  new_array = char.split('  ')
+  new_string = ''
+  new_array.each do |i|
+    new_string << "#{decode_word(i)} "
+  end
+  new_string
+end
+
 p decode('-- -.--  -. .- -- .')
 p decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
